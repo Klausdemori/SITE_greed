@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css"
+      href="css/style.css"/>	
+<!-- Bootstrap CSS -->
+ 
+</head>
+
+<body>
+
+<p>Before canvas.</p>
+<canvas width="900" height="900"></canvas>
+<p>After canvas.</p>
+<script>
+  var canvas = document.querySelector("canvas");
+  var context = canvas.getContext("2d");
+  
+  for(var i=0;i<1;i++){
+  var ranNumbS = getRandomInt(1, 900);
+  var ranNumbM = getRandomInt(0, 400);
+  var color1 = Math.round(255.0*Math.random());
+					var color2 = Math.round(255.0*Math.random());
+					var color3 = Math.round(255.0*Math.random());
+					r = color1.toString(16);
+					g = color2.toString(16);
+					b = color3.toString(16);
+					var bbcolor = r+g+b;
+								
+								
+  context.fillStyle = "#"+bbcolor;
+  context.fillRect(ranNumbM, ranNumbS, ranNumbM, ranNumbS);
+  }
+  
+  function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+  
+  canvas.onmousedown=handleMousedown;
+
+}
+</script>
+</body>
+</html>
